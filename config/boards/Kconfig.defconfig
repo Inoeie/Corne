@@ -1,34 +1,12 @@
 # Copyright (c) 2021 Polarity Works
 # SPDX-License-Identifier: MIT
 
-if BOARD_Nice_Nano
+if ZMK_BACKLIGHT
 
-config BOARD
-	default "NiceNano"
+config PWM
+    default y
 
-if USB
+config LED_PWM
+    default y
 
-config USB_NRFX
-	default y
-
-config USB_DEVICE_STACK
-	default y
-
-endif # USB
-
-config BT_CTLR
-	default BT
-
-config ZMK_BLE
-	default y
-
-config ZMK_USB
-	default y
-
-config ZMK_BATTERY_VOLTAGE_DIVIDER
-	default y
-
-config ZMK_KEYBOARD_NAME
-	default "NiceNano"
-
-endif # BOARD_BT60
+endif # ZMK_BACKLIGHT
