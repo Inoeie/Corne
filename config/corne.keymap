@@ -14,7 +14,6 @@
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
-#define ADJUST  3
 
 / {
    behaviors {
@@ -69,30 +68,16 @@
       };
 
       // -----------------------------------------------------------------------------------------
-      // |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-      // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-      // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-      //                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
+      // |  F1  |  F2 |  F3 | F4  |  F5 |  F6 |   | F7  |  F8 |  F9 | F10 | F11 | F12  |
+      // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | EFR | EFF | BRI | SPI | HUI |      |
+      // |      |     |     | BTP | BTN |     |   |NEXT |  PP | BRD | SPD | HUD |      |
+      //                    |     | LWR |     |   |     | RSE |     |
       raise_layer {
          bindings = <
-            &kp ESC  &none &none &none &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans 
-            &kp LCTRL  &none &none  &none &none &none &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE 
-            &kp LSHFT &none &none &none &none &none   &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE &kp TILDE
-                          &kp LGUI &trans &trans   &trans &to 3 &kp RALT
-         >;
-      };
-
-      // -----------------------------------------------------------------------------------------
-      // |  F1  |  F2 |  F3 | F4  |  F5 |  F6 |   | F7  |  F8 |  F9 | F10 | F11 | F12  |
-      // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | MUT | Vo- | Vo+ |     |     |      |
-      // |      |     |     | BTP | BTN |     |   |     |     |     |     |     |      |
-      //                    |     | LWR |     |   |     | RSE |     |
-      adjust_layer {
-         bindings = <
-            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6     &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp C_MUTE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &none &none &none
-            &none &none &none &bt BT_PRV &bt BT_NXT &none     &none &none &none &none &none &none
-                         &none &to 0 &trans     &trans &to 1 &none
+            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6     									&kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &rgb_ug RGB_EFR	 &rgb_ug RGB_EFF 	&rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &none
+            &none 	   &none 		&none 		 &bt BT_PRV   &bt BT_NXT   &none     		&kp C_NEXT       &kp C_PLAY_PAUSE 	&rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &none
+												 &none        &to 0		   &trans     		&trans &to 1 &none
          >;
       };
    };
