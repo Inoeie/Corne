@@ -34,7 +34,6 @@
 			bindings = <&kp>, <&mo>;
 		};
 	};
-	};
 	
 	combos {
 		compatible = "zmk,combos";
