@@ -74,7 +74,7 @@
       //                    | RGB | LWR | BKS |   | SPC | RSE | ALT |
       lower_layer {
          bindings = <
-            &kp GRAVE &kp N1       &kp N2 &kp N3   &kp N4    &kp N5    		&kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &DEL 
+            &kp GRAVE &kp N1       &kp N2 &kp N3   &kp N4    &kp N5    		&kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &kp DEL 
             &trans &kp ESC           &none  &kp UP &kp MINUS  &kp LBKT 		&kp RBKT  &kp PLUS &none &kp NON_US_HASH  &kp SQT &trans
             &trans &kp NON_US_BSLH &kp LEFT &kp DOWN &kp RIGHT &kp HOME  	&kp END   &none    &none    &none    &none     &trans
                                    &ext_power EP_TOG &trans    &trans   		&trans    &trans    &kp RALT
