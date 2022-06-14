@@ -46,7 +46,14 @@
             		label = "td_alt";
             		#binding-cells = <0>;
            		tapping-term-ms = <400>;
-           		bindings = <&kp RALT>, <&mo 2>;
+           		bindings = <&kp LALT>, <&kp RALT>;
+        	};
+		td_layer: tap_dance_layer {
+			compatible = "zmk,behavior-tap-dance";
+            		label = "td_layer";
+            		#binding-cells = <0>;
+           		tapping-term-ms = <250>;
+           		bindings = <&mo 1>, <&mo 2>;
         	};
 	};
 	
@@ -68,30 +75,30 @@
       compatible = "zmk,keymap";
 
       // -----------------------------------------------------------------------------------------
-      // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-      // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | RET |
+      // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | RET |
+      // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
       // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SFT |
       //                    | GUI | LWR | BKS |   | SPC | RSE  | ALT |
       default_layer {
          bindings = <
-            &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp ESC
-            &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp RET
+            &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp RET
+            &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
             &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                           &td_win &mo LOWER &kp BSPC &kp SPACE &mo LOWER &td_alt
+                           &kp LGUI &td_layer &kp BSPC &kp SPACE &td_layer &td_alt
          >;
       };
 
       // -----------------------------------------------------------------------------------------
       // |  `   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ESC |
-      // | CTRL |     |     |  UP |  -  |  [  |   |  ]  |  +  |     |  #  |  '  | RET |
-      // | SHFT |  \  | LFT | DWN | RGT |HOME |   | END |     |     |     |     | SHFT|
-      //                    |     | LWR | BKS |   | SPC | RSE | ALT |
+      // | CTRL |     |     |  UP |  -  |  [  |   |  ]  |  +  |     |     |     |  #  |
+      // | SHFT |  \  | LFT | DWN | RGT |HOME |   | END | PP  | PRV | NXT |     | SHFT|
+      //                    | GUI | LWR | DEL |   | SPC | RSE | ALT |
       lower_layer {
          bindings = <
-            &kp GRAVE &kp N1       &kp N2 &kp N3   &kp N4    &kp N5    		&kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &trans 
-            &trans &none           &none  &kp UP &kp MINUS  &kp LBKT 		&kp RBKT  &kp PLUS &none &kp NON_US_HASH  &kp SQT &trans
-            &trans &kp NON_US_BSLH &kp LEFT &kp DOWN &kp RIGHT &kp HOME  	&kp END   &none    &none    &none    &none     &trans
-                                	         &trans &trans &kp DEL      	 &trans    &trans    &trans
+            &kp GRAVE &kp N1       &kp N2 &kp N3   &kp N4    &kp N5    		&kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &kp ESC
+            &trans &none           &none  &kp UP &kp MINUS  &kp LBKT 		&kp RBKT  &kp PLUS &none &none &none &kp NON_US_HASH
+            &trans &kp NON_US_BSLH &kp LEFT &kp DOWN &kp RIGHT &kp HOME  	&kp END   &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &none     &trans
+                                	         &trans &trans &kp DEL      	&trans    &trans   &trans
          >; //
       };
 
