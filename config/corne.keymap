@@ -34,14 +34,14 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&mo>;
 		};
-		td_win: tap_dance_layer {
+		td_win: tap_dance_win {
 			compatible = "zmk,behavior-tap-dance";
             		label = "td_win";
             		#binding-cells = <0>;
            		tapping-term-ms = <400>;
            		bindings = <&kp LGUI>, <&mo 2>;
         	};
-		td_alt: tap_dance_layer {
+		td_alt: tap_dance_alt {
 			compatible = "zmk,behavior-tap-dance";
             		label = "td_alt";
             		#binding-cells = <0>;
