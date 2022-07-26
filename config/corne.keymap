@@ -12,6 +12,8 @@
 #include <../boards/shields/corne/boards/nice_nano.overlay>
 #include <dt-bindings/zmk/ext_power.h>
 
+EXT_POWER_OFF_CMD
+
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
