@@ -20,7 +20,6 @@
    behaviors {
 		mo_to: behavior_mo_to {
 			compatible = "zmk,behavior-hold-tap";
-			label = "mo_to";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
 			tapping-term-ms = <200>;
@@ -28,7 +27,6 @@
 		};
 		kp_mo: behavior_kp_mo {
 			compatible = "zmk,behavior-hold-tap";
-			label = "kp_mo";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
 			tapping-term-ms = <200>;
@@ -36,21 +34,18 @@
 		};
 		td_esc_grave: tap_dance_enter_grave {
 			compatible = "zmk,behavior-tap-dance";
-			label = "TD_ENTER_GRAVE";
 			#binding-cells = <0>;
 			tapping-term-ms = <200>;
 			bindings = <&kp ESC>, <&kp GRAVE>;
 		};
 		td_alt: tap_dance_alt {
 			compatible = "zmk,behavior-tap-dance";
-            		label = "td_alt";
             		#binding-cells = <0>;
            		tapping-term-ms = <400>;
            		bindings = <&kp LALT>, <&kp RALT>;
         	};
 		td_layer: tap_dance_layer {
 			compatible = "zmk,behavior-tap-dance";
-            		label = "td_layer";
             		#binding-cells = <0>;
            		tapping-term-ms = <250>;
            		bindings = <&mo 1>, <&mo 2>, <&mo 3>;
